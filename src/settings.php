@@ -6,7 +6,6 @@ return [
 
         // Renderer settings
         'renderer' => [
-            'view' => new \Slim\Views\Twig(),
             'template_path' => __DIR__ . '/../templates/',
         ],
 
