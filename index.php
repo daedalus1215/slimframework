@@ -41,7 +41,19 @@ $app->get('/', function ($request, $response) {
 
 
 $app->get('/users', function ($request, $response) {
-    echo $this->view->render($response, 'users.twig');
+
+    $user = [
+        ['username' => 'billy'],
+        ['username' => 'alex'],
+        ['username' => 'james'],
+        ['username' => 'morgan'],
+
+    ];
+
+
+    echo $this->view->render($response, 'users.twig', [
+        'users' => $user //exposing user variable with the value Billy.
+    ]);
 });
 
 
