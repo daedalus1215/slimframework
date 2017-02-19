@@ -54,8 +54,9 @@ $app->get('/', function ($request, $response) {
 })->setName('home');
 
 
-// Passing data to views,
-$app->get('/users', function ($request, $response) {
+
+// Route parameters, Passing data to views,
+$app->get('/users[/{userId}]', function ($request, $response, $args) {
 
     $user = [
         ['username' => 'billy'],
@@ -65,18 +66,12 @@ $app->get('/users', function ($request, $response) {
 
     ];
 
+    var_dump($args);
 
     echo $this->view->render($response, 'users.twig', [
         'users' => $user //exposing user variable with the value Billy.
     ]);
 })->setName('users.index');
-
-
-
-// Route parameters
-$app->get('/users/{userId}', function ($request, $response, $args) {
-    var_dump($args);
-});
 
 
 
