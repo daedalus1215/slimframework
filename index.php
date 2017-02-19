@@ -30,6 +30,7 @@ $container['view'] = function ($container) {
 };
 
 
+// Post routes, Contact form example, baseUrl and pathfor.
 $app->get('/contact', function ($request, $response) {
     echo $this->view->render($response, 'contact.twig');
 })->setName('contact');
@@ -53,6 +54,7 @@ $app->get('/', function ($request, $response) {
 })->setName('home');
 
 
+// Passing data to views,
 $app->get('/users', function ($request, $response) {
 
     $user = [
@@ -70,6 +72,11 @@ $app->get('/users', function ($request, $response) {
 })->setName('users.index');
 
 
+
+// Route parameters
+$app->get('/users/{userId}', function ($request, $response, $args) {
+    var_dump($args);
+});
 
 
 
