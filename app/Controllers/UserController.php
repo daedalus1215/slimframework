@@ -8,13 +8,17 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
 use Interop\Container\ContainerInterface;
 
 class UserController extends AbstractController
 {
     public function index($request, $response)
     {
+        $users = $this->c->db->query->query("SELECT * FROM users")->fetchAll(\PDO::FETCH_CLASS, User::class);
 
+
+        return $this->c->view->render($response, 'users/index.twig');
     }
 
     public function show()

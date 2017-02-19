@@ -9,5 +9,8 @@ namespace App\Models;
  */
 class User
 {
-
+    protected $id;
+    protected $firstName;
+    protected $lastName;
+    protected $fullName;
 }

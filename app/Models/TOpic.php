@@ -63,5 +63,5 @@ class Topic
         $this->body = $body;
     }
 
-    
+
 }
