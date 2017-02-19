@@ -3,19 +3,18 @@
  * Created by PhpStorm.
  * User: ladams
  * Date: 2/19/2017
- * Time: 2:34 PM
+ * Time: 2:53 PM
  */
 
 namespace App\Controllers;
 
-
 use Interop\Container\ContainerInterface;
 
-class TopicController extends AbstractController
+class UserController extends AbstractController
 {
     public function index($request, $response)
     {
-        return $this->c->view->render($response, 'topics/index.twig');
+       //@todo: fill in.
     }
 
     public function show()
