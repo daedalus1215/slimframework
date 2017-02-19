@@ -74,5 +74,20 @@ $app->get('/users[/{userId}]', function ($request, $response, $args) {
 })->setName('users.index');
 
 
+$app->group('/topics', function () {
+    $this->get('', function () {
+        echo 'Topic list';
+    });
+
+    $this->get('/{id}', function ($request, $response, $args) {
+        echo 'Topic list';
+    });
+
+    $this->post('', function () {
+        echo 'Topic list';
+    });
+});
+
+
 
 $app->run();
