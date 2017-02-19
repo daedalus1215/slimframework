@@ -14,7 +14,7 @@ class UserController extends AbstractController
 {
     public function index($request, $response)
     {
-       //@todo: fill in.
+
     }
 
     public function show()
