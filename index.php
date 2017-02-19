@@ -30,6 +30,15 @@ $container['view'] = function ($container) {
 };
 
 
+$app->get('/contact', function ($request, $response) {
+    echo $this->view->render($response, 'contact.twig');
+})->setName('contact');
+
+$app->post('/contact', function ($request, $response) {
+    die('Contact');
+})->setName('contact');
+
+
 
 
 
@@ -37,7 +46,7 @@ $container['view'] = function ($container) {
 
 $app->get('/', function ($request, $response) {
     echo $this->view->render($response, 'home.twig');
-});
+})->setName('home');
 
 
 $app->get('/users', function ($request, $response) {
@@ -54,13 +63,11 @@ $app->get('/users', function ($request, $response) {
     echo $this->view->render($response, 'users.twig', [
         'users' => $user //exposing user variable with the value Billy.
     ]);
-});
+})->setName('users.index');
 
 
 /*$app->get('/users', function () {
     echo 'Users';
 });*/
-
-//@todo: stopped at rendering a view.
 
 $app->run();
