@@ -11,7 +11,7 @@ $app = new \Slim\App([
 $container = $app->getContainer();
 
 
-require __DIR__ .'/config/view-config.php';
+require __DIR__ .'/../config/view-config.php';
 
 require __DIR__ . '/../config/db-config.php';
 
