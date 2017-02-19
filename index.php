@@ -34,8 +34,12 @@ $app->get('/contact', function ($request, $response) {
     echo $this->view->render($response, 'contact.twig');
 })->setName('contact');
 
+$app->get('/contact/confirm', function ($request, $response) {
+    return $this->view->render($response, 'contact_confirm.twig');
+});
+
 $app->post('/contact', function ($request, $response) {
-    echo $request->getParam('email');
+    return $response->withRedirect('http://slim.com/contact/confirm');
 })->setName('contact');
 
 
@@ -66,8 +70,7 @@ $app->get('/users', function ($request, $response) {
 })->setName('users.index');
 
 
-/*$app->get('/users', function () {
-    echo 'Users';
-});*/
+
+
 
 $app->run();
