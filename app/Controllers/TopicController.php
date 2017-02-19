@@ -9,13 +9,14 @@
 namespace App\Controllers;
 
 
+use App\Models\Topic;
 use Interop\Container\ContainerInterface;
 
 class TopicController extends AbstractController
 {
     public function index($request, $response)
     {
-        $topics = $this->c->db->query("SELECT * FROM topics")->fetchAll(\PDO::FETCH_OBJ);
+        $topics = $this->c->db->query("SELECT * FROM topics")->fetchAll(\PDO::FETCH_CLASS, Topic::class);
 
         return $this->c->view->render($response, 'topics/index.twig', compact('topics'));
     }
