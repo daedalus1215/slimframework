@@ -22,19 +22,9 @@ class TopicController extends AbstractController
      */
     public function index($request, $response)
     {
-        return $response->withStatus(404);
-        //return 'hi';
-    }
+        $topics = $this->c->db->query('SELECT * FROM topics')->fetchAll(\PDO::FETCH_OBJ);
 
-    public function show($request, $response, $args)
-    {
-        $topic = $this->c->db->prepare("SELECT * FROM topics WHERE id = :id");
-        $topic->execute(['id' => $args['id']]);
-        $topic = $topic->fetch(\PDO::FETCH_OBJ);
-        if ($topic === false) {
-            $this->render404($response);
-        }
+        return $response->withJson($topics, 200);
 
-        return $this->c->view->render($response, 'topics/show.twig', compact('topic'));
     }
 }
