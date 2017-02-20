@@ -22,10 +22,12 @@ class TopicController extends AbstractController
      */
     public function index($request, $response)
     {
-        $topics = $this->c->db->query('SELECT * FROM topics')->fetchAll(\PDO::FETCH_OBJ);
+        return 'Topic index';
 
+    }
 
-        return $response->withJson($topics, 200);
-
+    public function show($request, $response)
+    {
+        return 'topic show';
     }
 }
