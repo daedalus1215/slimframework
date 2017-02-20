@@ -28,6 +28,9 @@ class TopicController extends AbstractController
 
     public function show($request, $response)
     {
+        // get the CSFR token.
+        echo $request->getAttribute('token');
+
         return 'topic show';
     }
 }
