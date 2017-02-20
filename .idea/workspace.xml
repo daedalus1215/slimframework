@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a02482eb-59f9-4023-a5bb-5e6bd227584d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/TopicController.php" afterPath="$PROJECT_DIR$/app/Controllers/TopicController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,11 +31,11 @@
       <file leaf-file-name="TopicController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Controllers/TopicController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="374">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding>
                 <element signature="e#120#141#0#PHP" expanded="true" />
-                <marker date="1487597309033" expanded="true" signature="455:475" ph="SELECT * FRO... topics" />
+                <marker date="1487597425218" expanded="true" signature="455:475" ph="SELECT * FRO... topics" />
               </folding>
             </state>
           </provider>
@@ -309,12 +307,12 @@
       <workItem from="1487299068540" duration="647000" />
       <workItem from="1487376423632" duration="1094000" />
       <workItem from="1487453455400" duration="13307000" />
-      <workItem from="1487514572587" duration="15020000" />
+      <workItem from="1487514572587" duration="15137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32122000" />
+    <option name="totallyTimeSpent" value="32239000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -632,11 +630,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/TopicController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="374">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
             <element signature="e#120#141#0#PHP" expanded="true" />
-            <marker date="1487597309033" expanded="true" signature="455:475" ph="SELECT * FRO... topics" />
+            <marker date="1487597425218" expanded="true" signature="455:475" ph="SELECT * FRO... topics" />
           </folding>
         </state>
       </provider>

@@ -24,6 +24,15 @@ class TopicController extends AbstractController
     {
         $topics = $this->c->db->query('SELECT * FROM topics')->fetchAll(\PDO::FETCH_OBJ);
 
+
+        if (true) {
+            return $response->withJson(
+                ['error' => 'That topic does not exist'],
+                404
+            );
+        }
+
+
         return $response->withJson($topics, 200);
 
     }
