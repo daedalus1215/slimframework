@@ -2,14 +2,14 @@
 
 use App\Controllers\ExampleController;
 use App\Controllers\TopicController;
-
+use App\Middleware\UnAuthenticatedRedirect;
 
 // Different ways of handling routes.
 
 // 1. Anonymous route handler
 $app->get('/login', function () {
     return 'login';
-});
+})->setName('login');
 
 
 // 2. Named route handler
@@ -19,16 +19,6 @@ $app->get('/login', function () {
 
 // 3. Route Controller
 $app->get('/topics',  TopicController::class . ':index');
-
-
-
-$authenticatedMiddleware = function ($request, $response, $next) use ($container) {
-    if (false) {
-        $response = $response->withRedirect($container->router->pathFor('login'));
-    }
-
-    return $next($request, $response);
-};
 
 
 /**
@@ -50,7 +40,7 @@ $tokenMiddleware = function ($request, $response, $next) {
 
 // 4. Route Controller with Middleware
 $app->get('/topics/{id}',  TopicController::class . ':show')
-    ->add($authenticatedMiddleware)
+    ->add(new UnAuthenticatedRedirect($container))
     ->add($tokenMiddleware);
 
 

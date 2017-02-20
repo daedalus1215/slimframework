@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+$_SESSION['user_id'] = 0;
 
 $app = new \Slim\App([
     'settings' => [
