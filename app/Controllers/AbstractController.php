@@ -8,6 +8,7 @@
 
 namespace App\Controllers;
 use Interop\Container\ContainerInterface;
+use Slim\Http\Response;
 
 abstract class AbstractController
 {
@@ -24,4 +25,12 @@ abstract class AbstractController
         $this->c = $c;
     }
 
+    /**
+     * @param Response $response
+     * @return mixed
+     */
+    protected function render404($response)
+    {
+        return $this->c->view->render($response->withStatus(404), 'errors/404.twig');
+    }
 }

@@ -11,25 +11,30 @@ namespace App\Controllers;
 
 use App\Models\Topic;
 use Interop\Container\ContainerInterface;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 class TopicController extends AbstractController
 {
+    /**
+     * @param Request $request
+     * @param Response $response
+     */
     public function index($request, $response)
     {
-        $topics = $this->c->db->query("SELECT * FROM topics")->fetchAll(\PDO::FETCH_CLASS, Topic::class);
-
-        return $this->c->view->render($response, 'topics/index.twig', compact('topics'));
+        return $response->withStatus(404);
+        //return 'hi';
     }
 
     public function show($request, $response, $args)
     {
         $topic = $this->c->db->prepare("SELECT * FROM topics WHERE id = :id");
-
-        $topic->execute([
-            'id' => $args['id']
-        ]);
-
+        $topic->execute(['id' => $args['id']]);
         $topic = $topic->fetch(\PDO::FETCH_OBJ);
+        if ($topic === false) {
+            $this->render404($response);
+        }
+
         return $this->c->view->render($response, 'topics/show.twig', compact('topic'));
     }
 }
