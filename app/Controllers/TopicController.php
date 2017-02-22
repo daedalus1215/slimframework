@@ -33,4 +33,10 @@ class TopicController extends AbstractController
 
         return 'topic show';
     }
+
+
+    public function create($request, $response)
+    {
+        return 'create page';
+    }
 }

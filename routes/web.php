@@ -17,8 +17,7 @@ $app->get('/login', function () {
 
 
 
-// 3. Route Controller
-$app->get('/topics',  TopicController::class . ':index');
+
 
 
 /**
@@ -31,18 +30,17 @@ $app->get('/topics',  TopicController::class . ':index');
  * @return mixed
  */
 $tokenMiddleware = function ($request, $response, $next) {
-
     $request = $request->withAttribute('token', 'abc123');
-
     return $next($request, $response);
 };
 
+$app->group('', function () {
+    // 3. Route Controller
+    $this->get('/topics',  TopicController::class . ':index');
 
-// 4. Route Controller with Middleware
-$app->get('/topics/{id}',  TopicController::class . ':show')
-    ->add(new UnAuthenticatedRedirect($container))
-    ->add($tokenMiddleware);
+    // 4. Route Controller with Middleware
+    $this->get('/topics/create',  TopicController::class . ':show');
 
-
+})->add(new UnAuthenticatedRedirect($container))->add($tokenMiddleware);
 
 
