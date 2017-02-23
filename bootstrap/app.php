@@ -12,6 +12,16 @@ $app = new \Slim\App([
 $container = $app->getContainer();
 
 
+
+
+$container['notFoundHandler'] = function ($c) {
+    return function ($request, $response) {
+        return $response->withStatus(404)->write('Not found');
+    };
+};
+
+
+
 require __DIR__ .'/../config/view-config.php';
 
 require __DIR__ . '/../config/db-config.php';
